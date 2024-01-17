@@ -4,6 +4,580 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <!-- шапка -->
+    <header>
+      <div class="header-top container">
+        <div class="header-top__left">
+          <a href="/">
+            <img src="assets/images/logo.png" alt="logo" />
+          </a>
+          <h1>Помогаем строить профессионально! Безупречно!</h1>
+        </div>
+        <div class="header-top__right">
+          <div>
+            <p>Выберите город</p>
+            <p>
+              <svg class="svg-map">
+                <use xlink:href="assets/sprite.svg#svgMap"></use>
+              </svg>
+              <span>Ростов-на-Дону</span>
+            </p>
+          </div>
+          <div>
+            <p>
+              <svg class="svg-tel">
+                <use xlink:href="assets/sprite.svg#svgTel"></use>
+              </svg>
+              <span>8 800 700-62-07</span>
+            </p>
+            <p>
+              <svg class="svg-mail">
+                <use xlink:href="assets/sprite.svg#svgMail"></use>
+              </svg>
+              <span>info@berkut-rnd.ru</span>
+            </p>
+            <p>
+              <svg class="svg-telegram">
+                <use xlink:href="assets/sprite.svg#svgTelegram"></use>
+              </svg>
+              <span>@berkutpipe_rnd</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-bottom container">
+        <ul>
+          <li><a href="#">Каталог</a></li>
+          <li><a href="#">О компании</a></li>
+          <li><a href="#">Цены</a></li>
+          <li><a href="#">Объекты</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">Информация</a></li>
+          <li><a href="#">Контрафакт!</a></li>
+          <li><a href="#">Статьи</a></li>
+          <li><a href="#">Доставка</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- 
+    тело
+ -->
+
+    <main>
+      <section>карусель</section>
+      <section><a href="page-card.html">ссылка на 2ю страницу</a></section>
+      <section class="bread-crumbs container">
+        <span class="bread-crumb">Главная</span>
+        <span class="bread-crumb"><span>/</span><span>Каталог</span></span>
+        <span class="bread-crumb"
+          ><span>/</span><span>Трубы полиэтиленовые</span></span
+        >
+      </section>
+      <section class="search container">
+        <div class="search__basket-box">
+          <!-- <svg class="svg-basket">
+            <use xlink:href="assets/sprite.svg#svgBasket"></use>
+          </svg> -->
+          <svg
+            class="svg-basket"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 30 30"
+            fill="none"
+          >
+            <path
+              d="M2.43243 3.05405H4.61993L5.55743 6.80405M5.55743 6.80405L8.68243 19.304H24.9324L28.0574 6.80405H5.55743Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M8.68298 25.554C9.71852 25.554 10.558 24.7146 10.558 23.679C10.558 22.6435 9.71852 21.804 8.68298 21.804C7.64745 21.804 6.80798 22.6435 6.80798 23.679C6.80798 24.7146 7.64745 25.554 8.68298 25.554Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M24.9324 25.554C25.968 25.554 26.8074 24.7146 26.8074 23.679C26.8074 22.6435 25.968 21.804 24.9324 21.804C23.8969 21.804 23.0574 22.6435 23.0574 23.679C23.0574 24.7146 23.8969 25.554 24.9324 25.554Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span class="search__basket-box__sum"
+            ><span>1 456</span><span>&nbsp;₽</span></span
+          >
+        </div>
+        <div class="search__search-box">
+          <input type="text" placeholder="Поиск по&nbsp;сайту" />
+          <button>Найти</button>
+        </div>
+      </section>
+      <section class="main-content container">
+        <div class="main-content__aside">
+          <h2>Категории</h2>
+          <ul>
+            <li><a href="#">Сварочное оборудование</a></li>
+            <li><a href="#">Опорно направляющие кольца Спейсеры</a></li>
+            <li><a href="#">Гибкая вставка резиновая</a></li>
+            <li>
+              <a href="#"
+                >Врезной хомут (хомутовый отвод) фланцевый для чугунных и
+                стальных труб</a
+              >
+            </li>
+            <li>
+              <div class="accordion-item">
+                <div class="accordion-item_trigger">
+                  <span>Трубы полиэтиленовые</span>
+                  <svg class="svg-down">
+                    <use xlink:href="assets/sprite.svg#svgDown"></use>
+                  </svg>
+                </div>
+                <div class="accordion-item_content">
+                  <ul>
+                    <li><a href="#">Сварочное оборудование</a></li>
+                    <li>
+                      <a href="#">Опорно направляющие кольца Спейсеры</a>
+                    </li>
+                    <li><a href="#">Гибкая вставка резиновая</a></li>
+                    <li>
+                      <a href="#"
+                        >Врезной хомут (хомутовый отвод) фланцевый для чугунных
+                        и стальных труб</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="accordion-item">
+                <div class="accordion-item_trigger">
+                  <span
+                    >Врезной хомут (хомутовый отвод) фланцевый для чугунных и
+                    стальных труб</span
+                  >
+                  <svg class="svg-down">
+                    <use xlink:href="assets/sprite.svg#svgDown"></use>
+                  </svg>
+                </div>
+                <div class="accordion-item_content">
+                  <ul>
+                    <li><a href="#">Сварочное оборудование</a></li>
+                    <li><a href="#">Опорно направляющие кольца Спейсеры</a></li>
+                    <li><a href="#">Гибкая вставка резиновая</a></li>
+                    <li>
+                      <a href="#"
+                        >Врезной хомут (хомутовый отвод) фланцевый для чугунных
+                        и стальных труб</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="accordion-item">
+                <div class="accordion-item_trigger">
+                  <span
+                    >Врезной хомут (хомутовый отвод) фланцевый для чугунных и
+                    стальных труб</span
+                  >
+                  <svg class="svg-down">
+                    <use xlink:href="assets/sprite.svg#svgDown"></use>
+                  </svg>
+                </div>
+                <div class="accordion-item_content">
+                  <ul>
+                    <li><a href="#">Сварочное оборудование</a></li>
+                    <li><a href="#">Опорно направляющие кольца Спейсеры</a></li>
+                    <li><a href="#">Гибкая вставка резиновая</a></li>
+                    <li>
+                      <a href="#"
+                        >Врезной хомут (хомутовый отвод) фланцевый для чугунных
+                        и стальных труб</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="accordion-item">
+                <div class="accordion-item_trigger">
+                  <span>Гибкая вставка резиновая (вибровставка) фланцевая</span>
+                  <svg class="svg-down">
+                    <use xlink:href="assets/sprite.svg#svgDown"></use>
+                  </svg>
+                </div>
+                <div class="accordion-item_content">
+                  <ul>
+                    <li><a href="#">Сварочное оборудование</a></li>
+                    <li><a href="#">Опорно направляющие кольца Спейсеры</a></li>
+                    <li><a href="#">Гибкая вставка резиновая</a></li>
+                    <li>
+                      <a href="#"
+                        >Врезной хомут (хомутовый отвод) фланцевый для чугунных
+                        и стальных труб</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+            </li>
+            <li>
+              <div class="accordion-item">
+                <div class="accordion-item_trigger">
+                  <span>Врезной хомут</span>
+                  <svg class="svg-down">
+                    <use xlink:href="assets/sprite.svg#svgDown"></use>
+                  </svg>
+                </div>
+                <div class="accordion-item_content">
+                  <ul>
+                    <li><a href="#">Сварочное оборудование</a></li>
+                    <li><a href="#">Опорно направляющие кольца Спейсеры</a></li>
+                    <li><a href="#">Гибкая вставка резиновая</a></li>
+                    <li>
+                      <a href="#"
+                        >Врезной хомут (хомутовый отвод) фланцевый для чугунных
+                        и стальных труб</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="main-content__cards">
+          <div class="cards-filter">
+            <label for="cardsFilter">Сортировка</label
+            ><select name="" id="cardsFilter">
+              <option value="">По популярности</option>
+            </select>
+          </div>
+          <div class="card-box">
+            <div class="card-box__card">
+              <img
+                src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                alt=""
+              />
+              <p>
+                Гибкая вставка резиновая (вибровставка) фланцевая
+                ДУ 125 Ру 10/16
+              </p>
+              <div class="card-basket">
+                <div>
+                  <span class="card-basket__from">от</span>
+                  <span class="card-basket__sum">14&nbsp;700</span><span class="card-basket__forex">&nbsp;₽</span>
+                </div>
+                <a href="">
+                  <div class="link-basket">
+                    <img src="assets/images/icon-basket.png" alt="icon-basket">
+                  </div>
+                </a> 
+              </div>
+            </div>
+            <div class="card-box__card">
+              <img
+                src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                alt=""
+              />
+              <p>
+                Гибкая вставка резиновая (вибровставка) фланцевая
+                ДУ 125 Ру 10/16
+              </p>
+              <div class="card-basket">
+                <div class="calc">
+                  <a href=""><img src="assets/images/Minus.png" alt="minus" class="minus"></a>
+                  <span class="calc-elem">1</span>
+                  <a href=""><img src="assets/images/Plus.png" alt="plus" class="plus"></a>
+                </div>
+                <a href="">
+                  <div class="link-basket">
+                    <img src="assets/images/icon-basket.png" alt="icon-basket">
+                  </div>
+                </a> 
+              </div>
+            </div>
+            <div class="card-box__card">
+              <img
+                src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                alt=""
+              />
+              <p>
+                Гибкая вставка резиновая (вибровставка) фланцевая
+                ДУ 125 Ру 10/16
+              </p>
+              <div class="card-basket">
+                <div>
+                  <span class="card-basket__from">от</span>
+                  <span class="card-basket__sum">14&nbsp;700</span><span class="card-basket__forex">&nbsp;₽</span>
+                </div>
+                <a href="">
+                  <div class="link-basket">
+                    <img src="assets/images/icon-basket.png" alt="icon-basket">
+                  </div>
+                </a> 
+              </div>
+            </div>
+            <div class="card-box__card">
+              <img
+                src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                alt=""
+              />
+              <p>
+                Гибкая вставка резиновая (вибровставка) фланцевая
+                ДУ 125 Ру 10/16
+              </p>
+              <div class="card-basket">
+                <div>
+                  <span class="card-basket__from">от</span>
+                  <span class="card-basket__sum">14&nbsp;700</span><span class="card-basket__forex">&nbsp;₽</span>
+                </div>
+                <a href="">
+                  <div class="link-basket">
+                    <img src="assets/images/icon-basket.png" alt="icon-basket">
+                  </div>
+                </a> 
+              </div>
+            </div>
+            <div class="card-box__card">
+              <img
+                src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                alt=""
+              />
+              <p>
+                Гибкая вставка резиновая (вибровставка) фланцевая
+                ДУ 125 Ру 10/16
+              </p>
+              <div class="card-basket">
+                <div>
+                  <span class="card-basket__from">от</span>
+                  <span class="card-basket__sum">14&nbsp;700</span><span class="card-basket__forex">&nbsp;₽</span>
+                </div>
+                <a href="">
+                  <div class="link-basket">
+                    <img src="assets/images/icon-basket.png" alt="icon-basket">
+                  </div>
+                </a> 
+              </div>
+            </div>
+            <div class="card-box__card">
+              <img
+                src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                alt=""
+              />
+              <p>
+                Гибкая вставка резиновая (вибровставка) фланцевая
+                ДУ 125 Ру 10/16
+              </p>
+              <div class="card-basket">
+                <div>
+                  <span class="card-basket__from">от</span>
+                  <span class="card-basket__sum">14&nbsp;700</span><span class="card-basket__forex">&nbsp;₽</span>
+                </div>
+                <a href="">
+                  <div class="link-basket">
+                    <img src="assets/images/icon-basket.png" alt="icon-basket">
+                  </div>
+                </a> 
+              </div>
+            </div>
+            <div class="card-box__card">
+              <img
+                src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                alt=""
+              />
+              <p>
+                Гибкая вставка резиновая (вибровставка) фланцевая
+                ДУ 125 Ру 10/16
+              </p>
+              <div class="card-basket">
+                <div>
+                  <span class="card-basket__from">от</span>
+                  <span class="card-basket__sum">14&nbsp;700</span><span class="card-basket__forex">&nbsp;₽</span>
+                </div>
+                <a href="">
+                  <div class="link-basket">
+                    <img src="assets/images/icon-basket.png" alt="icon-basket">
+                  </div>
+                </a> 
+              </div>
+            </div>
+            <div class="card-box__card">
+              <img
+                src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                alt=""
+              />
+              <p>
+                Гибкая вставка резиновая (вибровставка) фланцевая
+                ДУ 125 Ру 10/16
+              </p>
+              <div class="card-basket">
+                <div>
+                  <span class="card-basket__from">от</span>
+                  <span class="card-basket__sum">14&nbsp;700</span><span class="card-basket__forex">&nbsp;₽</span>
+                </div>
+                <a href="">
+                  <div class="link-basket">
+                    <img src="assets/images/icon-basket.png" alt="icon-basket">
+                  </div>
+                </a> 
+              </div>
+            </div>
+            <div class="card-box__card">
+              <img
+                src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                alt=""
+              />
+              <p>
+                Гибкая вставка резиновая (вибровставка) фланцевая
+                ДУ 125 Ру 10/16
+              </p>
+              <div class="card-basket">
+                <div>
+                  <span class="card-basket__from">от</span>
+                  <span class="card-basket__sum">14&nbsp;700</span><span class="card-basket__forex">&nbsp;₽</span>
+                </div>
+                <a href="">
+                  <div class="link-basket">
+                    <img src="assets/images/icon-basket.png" alt="icon-basket">
+                  </div>
+                </a> 
+              </div>
+            </div>
+            <div class="card-box__card">
+              <img
+                src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                alt=""
+              />
+              <p>
+                Гибкая вставка резиновая (вибровставка) фланцевая
+                ДУ 125 Ру 10/16
+              </p>
+              <div class="card-basket">
+                <div>
+                  <span class="card-basket__from">от</span>
+                  <span class="card-basket__sum">14&nbsp;700</span><span class="card-basket__forex">&nbsp;₽</span>
+                </div>
+                <a href="">
+                  <div class="link-basket">
+                    <img src="assets/images/icon-basket.png" alt="icon-basket">
+                  </div>
+                </a> 
+              </div>
+            </div>
+            <div class="card-box__card">
+              <img
+                src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                alt=""
+              />
+              <p>
+                Гибкая вставка резиновая (вибровставка) фланцевая
+                ДУ 125 Ру 10/16
+              </p>
+              <div class="card-basket">
+                <div>
+                  <span class="card-basket__from">от</span>
+                  <span class="card-basket__sum">14&nbsp;700</span><span class="card-basket__forex">&nbsp;₽</span>
+                </div>
+                <a href="">
+                  <div class="link-basket">
+                    <img src="assets/images/icon-basket.png" alt="icon-basket">
+                  </div>
+                </a> 
+              </div>
+            </div>
+            <div class="card-box__card">
+              <img
+                src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                alt=""
+              />
+              <p>
+                Гибкая вставка резиновая (вибровставка) фланцевая
+                ДУ 125 Ру 10/16
+              </p>
+              <div class="card-basket">
+                <div>
+                  <span class="card-basket__from">от</span>
+                  <span class="card-basket__sum">14&nbsp;700</span><span class="card-basket__forex">&nbsp;₽</span>
+                </div>
+                <a href="">
+                  <div class="link-basket">
+                    <img src="assets/images/icon-basket.png" alt="icon-basket">
+                  </div>
+                </a> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pagination container">
+        <div class="pagination__numer">
+          <a href="" class="pagination__num pagination__numer_activ">1</a>
+          <a href="" class="pagination__num">2</a>
+          <a href="" class="pagination__num">3</a>
+          <a href="" class="pagination__num">4</a>
+          <a href="" class="pagination__num">5</a>
+          <a href="">
+            <span>Дальше</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+              <path d="M15.3472 12.0889L7.20902 3.72549C7.14202 3.65809 7.08905 3.57807 7.05317 3.49006C7.0173 3.40206 6.99924 3.30781 7.00002 3.21278C7.00081 3.11775 7.02044 3.02381 7.05777 2.93642C7.09511 2.84902 7.1494 2.76989 7.21751 2.70362C7.28563 2.63734 7.36621 2.58523 7.45459 2.5503C7.54298 2.51537 7.63741 2.49832 7.73243 2.50013C7.82745 2.50194 7.92117 2.52257 8.00816 2.56084C8.09515 2.59911 8.17369 2.65425 8.23923 2.72307L16.8642 11.5877C16.9948 11.7218 17.0678 11.9017 17.0678 12.0889C17.0678 12.2761 16.9948 12.4559 16.8642 12.5901L8.23923 21.4547C8.17369 21.5235 8.09515 21.5786 8.00816 21.6169C7.92117 21.6551 7.82745 21.6758 7.73243 21.6776C7.63741 21.6794 7.54298 21.6623 7.45459 21.6274C7.36621 21.5925 7.28563 21.5404 7.21751 21.4741C7.1494 21.4078 7.09511 21.3287 7.05777 21.2413C7.02044 21.1539 7.00081 21.06 7.00002 20.9649C6.99924 20.8699 7.0173 20.7757 7.05317 20.6877C7.08905 20.5997 7.14202 20.5196 7.20902 20.4522L15.3472 12.0889Z" fill="#272727"/>
+            </svg>
+          </a>
+        </div>
+        <div class="pagination__counter">
+          <span>00</span><span>&nbsp;из</span><span>&nbsp;0000</span>
+        </div>
+      </section>
+    </main>
+
+    <!-- 
+    подвал
+ -->
+
+    <footer>
+      <div class="bottom-box container">
+        <div class="bottom-left">
+          <p class="signature">&copy;&nbsp;2014–2023&nbsp;ООО&nbsp;«БЕРКУТ»</p>
+          <p>
+            Обращаем ваше внимание на то, что данный интернет-сайт носит
+            исключительно информационный характер и ни при каких условиях
+            не является публичной офертой, определяемой положением Статьи 437 (2)
+            Гражданского кодекса РФ
+          </p>
+          <a href=""><p>Политика конфидициальности</p></a>
+        </div>
+        <div class="bottom-right">
+        <p class="footer-contact">
+          <img src="assets/images/lucide_phone-call.png" alt="phone">
+          <span>8 800 700-62-07</span>
+          <img src="assets/images/lucide_mail.png" alt="mail">
+          <span>info@berkut-rnd.ru</span>
+          <span class="link-footer">
+            <a href=""><img src="assets/images/ph_telegram-logo.png" alt="telegram"></a>
+            <a href=""><img src="assets/images/ion_logo-vk.png" alt="vk"></a>
+            <a href=""><img src="assets/images/mdi_odnoklassniki.png" alt="odnoklassniki"></a>
+          </span>
+        </p>
+        <div class="delta-images">
+          <a href="#"
+            ><img class="img-delta" src="assets/images/deltalink.jpg" alt="deltalink"
+          /></a>
+          <img src="assets/images/footer-img.jpg" alt="footer-img" />
+        </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
