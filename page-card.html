@@ -4,15 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="style.css" />
 
+    <script src="assets/js/jquery.min.js" defer></script>
+    <script async src="assets/js/clipboard.min.js" defer></script>
+    <script async src="assets/js/qrcode.min.js" defer></script>
+
+    <script
+      async
+      src="https://use.fontawesome.com/d92205138a.js"
+      defer
+    ></script>
+    <script
+      async
+      src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"
+      defer
+    ></script>
+
+    <script src="assets/js/jquery-3.6.3.min.js" defer></script>
     <script src="script.js" defer></script>
   </head>
   <body>
-    <section class="box"><a href="index.html">1я страница</a></section>
+    <section style="position: fixed; top: 0; z-index: 20">
+      <a href="index.html">ссылка на 1ю страницу</a>
+    </section>
     <!-- шапка -->
-    <header class="box">
+    <header>
       <div class="header-top container">
         <div class="header-top__left">
           <a href="/">
@@ -27,53 +46,180 @@
               <svg class="svg-map">
                 <use xlink:href="assets/sprite.svg#svgMap"></use>
               </svg>
-              <span>Ростов-на-Дону</span>
+              <span class="focus_city_map_menu">Ростов-на-Дону</span>
             </p>
           </div>
           <div>
             <p>
-              <svg class="svg-tel">
-                <use xlink:href="assets/sprite.svg#svgTel"></use>
-              </svg>
-              <span>8 800 700-62-07</span>
+              <a href="tel:88007006207">
+                <svg class="svg-tel">
+                  <use xlink:href="assets/sprite.svg#svgTel"></use>
+                </svg>
+                <span>8 800 700-62-07</span>
+              </a>
             </p>
             <p>
-              <svg class="svg-mail">
-                <use xlink:href="assets/sprite.svg#svgMail"></use>
-              </svg>
-              <span>info@berkut-rnd.ru</span>
+              <a href="mail:info@berkut-rnd.ru">
+                <svg class="svg-mail">
+                  <use xlink:href="assets/sprite.svg#svgMail"></use>
+                </svg>
+                <span>info@berkut-rnd.ru</span>
+              </a>
             </p>
             <p>
-              <svg class="svg-telegram">
-                <use xlink:href="assets/sprite.svg#svgTelegram"></use>
-              </svg>
-              <span>@berkutpipe_rnd</span>
+              <a href="https://t.me/@berkutpipe_rnd">
+                <svg class="svg-telegram">
+                  <use xlink:href="assets/sprite.svg#svgTelegram"></use>
+                </svg>
+                <span>@berkutpipe_rnd</span>
+              </a>
             </p>
           </div>
         </div>
       </div>
 
-      <div class="header-bottom container">
-        <ul>
-          <li><a href="#">Каталог</a></li>
-          <li><a href="#">О компании</a></li>
-          <li><a href="#">Цены</a></li>
-          <li><a href="#">Объекты</a></li>
-          <li><a href="#">Отзывы</a></li>
-          <li><a href="#">Информация</a></li>
-          <li><a href="#">Контрафакт!</a></li>
-          <li><a href="#">Статьи</a></li>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Контакты</a></li>
-        </ul>
+      <div class="header-bottom">
+        <div class="container">
+          <ul>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Цены</a></li>
+            <li><a href="#">Объекты</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Информация</a></li>
+            <li><a href="#">Контрафакт!</a></li>
+            <li><a href="#">Статьи</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="popup_map_menu" style="display: none">
+        <div class="all_content_popup_map_menu">
+          <div class="close_popup_map_menu">×</div>
+          <div class="content_popup_map_menu">
+            <div class="popup_map_menu_left">
+              <h3>Субъект</h3>
+              <div class="list_city_map">
+                <div class="one_city_map_menu active_city" data_id="11259">
+                  Ростовская область
+                </div>
+                <div class="one_city_map_menu" data_id="11271">
+                  Астраханская область
+                </div>
+                <div class="one_city_map_menu" data_id="11272">
+                  Волгоградская область
+                </div>
+                <div class="one_city_map_menu" data_id="11261">
+                  Республика Калмыкия
+                </div>
+                <div class="one_city_map_menu" data_id="11273">
+                  Воронежская область
+                </div>
+                <div class="one_city_map_menu" data_id="11267">
+                  Кабардино-Балкарская Республика
+                </div>
+                <div class="one_city_map_menu" data_id="11268">
+                  Карачаево-Черкесская Республика
+                </div>
+                <div class="one_city_map_menu" data_id="11270">
+                  Краснодарский край
+                </div>
+                <div class="one_city_map_menu" data_id="11262">
+                  Республика Адыгея
+                </div>
+                <div class="one_city_map_menu" data_id="11263">
+                  Республика Дагестан
+                </div>
+                <div class="one_city_map_menu" data_id="11264">
+                  Республика Ингушетия
+                </div>
+                <div class="one_city_map_menu" data_id="11260">
+                  Республика Крым
+                </div>
+                <div class="one_city_map_menu" data_id="11265">
+                  Республика Северная Осетия (Алания)
+                </div>
+                <div class="one_city_map_menu" data_id="11269">
+                  Ставропольский край
+                </div>
+                <div class="one_city_map_menu" data_id="11266">
+                  Чеченская Республика
+                </div>
+              </div>
+            </div>
+            <div class="popup_map_menu_right">
+              <h3>Город</h3>
+              <div class="list_object_in_city">
+                <div class="addres_in_popup">
+                  <a href="//berkut-rnd.ru/?go">Ростов-на-Дону</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//bataisk.berkut-rnd.ru/?go">Батайск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//belaya-kalitva.berkut-rnd.ru/?go">Белая Калитва</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//volgodonsk.berkut-rnd.ru/?go">Волгодонск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//doneck.berkut-rnd.ru/?go">Донецк</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//kamensk-shahtinskij.berkut-rnd.ru/?go"
+                    >Каменск-Шахтинский</a
+                  >
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//millerovo.berkut-rnd.ru/?go">Миллерово</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//novocherkassk.berkut-rnd.ru/?go">Новочеркасск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//taganrog.berkut-rnd.ru/?go">Таганрог</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//shahty.berkut-rnd.ru/?go">Шахты</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//azov.berkut-rnd.ru/?go">Азов</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//salsk.berkut-rnd.ru/?go">Сальск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//semikarakorsk.berkut-rnd.ru/?go">Семикаракорск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//proletarsk.berkut-rnd.ru/?go">Пролетарск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//novoshahtinsk.berkut-rnd.ru/?go">Новошахтинск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//morozovsk.berkut-rnd.ru/?go">Морозовск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//cimlyansk.berkut-rnd.ru/?go">Цимлянск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//zernograd.berkut-rnd.ru/?go">Зерноград</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//zimovniki.berkut-rnd.ru/?go">Зимовники</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
-    <!-- 
-    тело
- -->
-
-    <main class="box">
+    <!-- тело -->
+    <main>
       <section class="search container page-card">
         <div class="search__search-box">
           <input type="text" placeholder="Поиск по&nbsp;сайту" />
@@ -103,10 +249,10 @@
             />
           </div>
           <div class="card-box-title__description">
-            <h2>
+            <h1>
               Муфта защитная для прохода ПЭ труб сквозь стену бетонного колодца
               Ду 160 мм
-            </h2>
+            </h1>
             <div class="card-box-title__description__price">
               <div class="print-left">
                 <p>Цена от:</p>
@@ -133,28 +279,34 @@
                 С каждого платежа мы перечисляем средства в Благотворительный
                 фонд спасения тяжелобольных детей «Линия Жизни»
               </p>
-              <img src="assets/images/line_live.png" alt="Линия жизни" />
+              <a href="" rel="nofollow" target="_blank"
+                ><img src="assets/images/line_live.png" alt="Линия жизни"
+              /></a>
             </div>
             <div class="bay-box">
               <button>Купить</button>
-              <a href="">Заказать счёт на оплату</a>
-              <a href="">Хочу скидку</a>
+              <a id="shop_in_urid">Заказать счёт на оплату</a>
+              <a id="modal-skidka-btn">Хочу скидку</a>
             </div>
             <div class="offers">
-              <p class="offers-top">
-                Работаем только с юр. лицами и индивидуальными
-                предпринимателями.
-              </p>
-              <p class="offers-top">
-                Все отгрузки осуществляются со склада в г. Ростов-на-Дону.
-              </p>
-              <p class="offers-bottom">
-                Цены действительны при закупке от 50 000
-              </p>
-              <p class="offers-bottom">Минимальная сумма заказа 1000</p>
-              <p class="offers-bottom">
-                Наличие и актуальную цену на ваш заказ уточняйте у менеджеров.
-              </p>
+              <div class="offers__top">
+                <p class="offers-top">
+                  Работаем только с юр. лицами и индивидуальными
+                  предпринимателями.
+                </p>
+                <p class="offers-top">
+                  Все отгрузки осуществляются со склада в г. Ростов-на-Дону.
+                </p>
+              </div>
+              <div class="offers__bottom">
+                <p class="offers-bottom">
+                  Цены действительны при закупке от 50 000
+                </p>
+                <p class="offers-bottom">Минимальная сумма заказа 1000</p>
+                <p class="offers-bottom">
+                  Наличие и актуальную цену на ваш заказ уточняйте у менеджеров.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -232,9 +384,9 @@
       <section class="carousel">
         <h2 class="container">С этим товаром покупают</h2>
         <div>
-          <div class="carousel-box container">
-            <div class="carousel-cards">
-              <div class="card-box__card">
+          <div class="carousel-box__up container">
+            <div class="carousel-cards__up">
+              <div class="card-box__card-up">
                 <img
                   src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
                   alt=""
@@ -259,7 +411,7 @@
                   </a>
                 </div>
               </div>
-              <div class="card-box__card">
+              <div class="card-box__card-up">
                 <img
                   src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
                   alt=""
@@ -284,7 +436,7 @@
                   </a>
                 </div>
               </div>
-              <div class="card-box__card">
+              <div class="card-box__card-up">
                 <img
                   src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
                   alt=""
@@ -309,7 +461,7 @@
                   </a>
                 </div>
               </div>
-              <div class="card-box__card">
+              <div class="card-box__card-up">
                 <img
                   src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
                   alt=""
@@ -334,7 +486,132 @@
                   </a>
                 </div>
               </div>
-              <div class="card-box__card">
+              <div class="card-box__card-up">
+                <img
+                  src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                  alt=""
+                />
+                <p>
+                  Гибкая вставка резиновая (вибровставка) фланцевая
+                  ДУ 125 Ру 10/16
+                </p>
+                <div class="card-basket">
+                  <div>
+                    <span class="card-basket__from">от</span>
+                    <span class="card-basket__sum">14&nbsp;700</span
+                    ><span class="card-basket__forex">&nbsp;₽</span>
+                  </div>
+                  <a href="">
+                    <div class="link-basket">
+                      <img
+                        src="assets/images/icon-basket.png"
+                        alt="icon-basket"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="card-box__card-up">
+                <img
+                  src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                  alt=""
+                />
+                <p>
+                  Гибкая вставка резиновая (вибровставка) фланцевая
+                  ДУ 125 Ру 10/16
+                </p>
+                <div class="card-basket">
+                  <div>
+                    <span class="card-basket__from">от</span>
+                    <span class="card-basket__sum">14&nbsp;700</span
+                    ><span class="card-basket__forex">&nbsp;₽</span>
+                  </div>
+                  <a href="">
+                    <div class="link-basket">
+                      <img
+                        src="assets/images/icon-basket.png"
+                        alt="icon-basket"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="card-box__card-up">
+                <img
+                  src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                  alt=""
+                />
+                <p>
+                  Гибкая вставка резиновая (вибровставка) фланцевая
+                  ДУ 125 Ру 10/16
+                </p>
+                <div class="card-basket">
+                  <div>
+                    <span class="card-basket__from">от</span>
+                    <span class="card-basket__sum">14&nbsp;700</span
+                    ><span class="card-basket__forex">&nbsp;₽</span>
+                  </div>
+                  <a href="">
+                    <div class="link-basket">
+                      <img
+                        src="assets/images/icon-basket.png"
+                        alt="icon-basket"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="card-box__card-up">
+                <img
+                  src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                  alt=""
+                />
+                <p>
+                  Гибкая вставка резиновая (вибровставка) фланцевая
+                  ДУ 125 Ру 10/16
+                </p>
+                <div class="card-basket">
+                  <div>
+                    <span class="card-basket__from">от</span>
+                    <span class="card-basket__sum">14&nbsp;700</span
+                    ><span class="card-basket__forex">&nbsp;₽</span>
+                  </div>
+                  <a href="">
+                    <div class="link-basket">
+                      <img
+                        src="assets/images/icon-basket.png"
+                        alt="icon-basket"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="card-box__card-up">
+                <img
+                  src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
+                  alt=""
+                />
+                <p>
+                  Гибкая вставка резиновая (вибровставка) фланцевая
+                  ДУ 125 Ру 10/16
+                </p>
+                <div class="card-basket">
+                  <div>
+                    <span class="card-basket__from">от</span>
+                    <span class="card-basket__sum">14&nbsp;700</span
+                    ><span class="card-basket__forex">&nbsp;₽</span>
+                  </div>
+                  <a href="">
+                    <div class="link-basket">
+                      <img
+                        src="assets/images/icon-basket.png"
+                        alt="icon-basket"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="card-box__card-up">
                 <img
                   src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg"
                   alt=""
@@ -360,7 +637,7 @@
                 </div>
               </div>
             </div>
-            <div class="box-svg-circle left">
+            <div class="box-svg-circle left__up">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -374,7 +651,7 @@
                 />
               </svg>
             </div>
-            <div class="box-svg-circle right">
+            <div class="box-svg-circle right__up">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -389,7 +666,7 @@
               </svg>
             </div>
           </div>
-          <div class="bread-crumbs-carousel container">
+          <div class="bread-crumbs-carousel__up container">
             <svg class="svg-circle circle-red">
               <use xlink:href="assets/sprite.svg#svgCircle"></use>
             </svg>
@@ -589,15 +866,12 @@
       </section>
       <section class="feedback container">
         <h2>Отзывы</h2>
-        <a href="">Оставить отзыв</a>
+        <a class="addComment">Оставить отзыв</a>
       </section>
     </main>
 
-    <!-- 
-    подвал
- -->
-
-    <footer class="box">
+    <!-- подвал -->
+    <footer>
       <div class="bottom-box container">
         <div class="bottom-left">
           <p class="signature">&copy;&nbsp;2014–2023&nbsp;ООО&nbsp;«БЕРКУТ»</p>
@@ -611,10 +885,14 @@
         </div>
         <div class="bottom-right">
           <p class="footer-contact">
-            <img src="assets/images/lucide_phone-call.png" alt="phone" />
-            <span>8 800 700-62-07</span>
-            <img src="assets/images/lucide_mail.png" alt="mail" />
-            <span>info@berkut-rnd.ru</span>
+            <a href="tel:88007006207">
+              <img src="assets/images/lucide_phone-call.png" alt="phone" />
+              <span>8 800 700-62-07</span>
+            </a>
+            <a href="mail:info@berkut-rnd.ru">
+              <img src="assets/images/lucide_mail.png" alt="mail" />
+              <span>info@berkut-rnd.ru</span>
+            </a>
             <span class="link-footer">
               <a href=""
                 ><img src="assets/images/ph_telegram-logo.png" alt="telegram"
@@ -641,5 +919,348 @@
         </div>
       </div>
     </footer>
+    <!-- модалка счет на оплату -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span>Заказ счета на оплату</span>
+          <span class="close">X</span>
+        </div>
+        <div class="modal-body">
+          <div class="form-style-8">
+            <form
+              id="commentForm"
+              class="form"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <fieldset>
+                <div class="input-wrap">
+                  <input
+                    id="commentForm_name1"
+                    class="rfield empty_field"
+                    type="text"
+                    placeholder="Организация:"
+                    value=""
+                    name="organization"
+                  /><br />
+                  <input
+                    id="commentForm_name2"
+                    class="rfield empty_field"
+                    type="text"
+                    placeholder="Город:"
+                    value=""
+                    name="citi"
+                  /><br />
+                  <input
+                    id="commentForm_name3"
+                    class="rfield empty_field"
+                    type="text"
+                    placeholder="Имя Отчество:"
+                    value=""
+                    name="name"
+                  /><br />
+                  <input
+                    id="email"
+                    type="text"
+                    class="rfield empty_field"
+                    placeholder="E-mail:"
+                    value=""
+                    name="email"
+                  /><br />
+                  <input
+                    id="commentForm_name4"
+                    type="text"
+                    class="rfield empty_field"
+                    placeholder="Номер телефона:"
+                    value=""
+                    name="phone"
+                  /><br />
+                </div>
+
+                <label class="file">
+                  <span class="screpka"></span>
+                  <span class="file-label">Прикрепить реквизиты</span>
+                  <input
+                    id="file"
+                    type="file"
+                    value=""
+                    class="rfield empty_field"
+                    name="attachment"
+                  />
+                  <span class="file-value" aria-hidden="true"></span>
+                </label>
+                <label class="file">
+                  <span class="screpka"></span>
+                  <span class="file-label">Прикрепить заявку</span>
+                  <input
+                    id="file"
+                    type="file"
+                    value=""
+                    class="rfield empty_field"
+                    name="attachment2"
+                  />
+                  <span class="file-value" aria-hidden="true"></span>
+                </label>
+
+                <div
+                  class="g-recaptcha"
+                  data-sitekey="6LcsO6wUAAAAAFzOyEDMKhbHJLaSPfb3qzfFeULu"
+                >
+                  <div style="width: 304px; height: 78px">
+                    <div>
+                      <iframe
+                        title="reCAPTCHA"
+                        width="304"
+                        height="78"
+                        role="presentation"
+                        name="a-jwxh6olytr75"
+                        frameborder="0"
+                        scrolling="no"
+                        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                        src="https://www.google.com/recaptcha/api2/anchor?ar=2&amp;k=6LcsO6wUAAAAAFzOyEDMKhbHJLaSPfb3qzfFeULu&amp;co=aHR0cHM6Ly9iZXJrdXQtcm5kLnJ1OjQ0Mw..&amp;hl=ru&amp;v=Ya-Cd6PbRI5ktAHEhm9JuKEu&amp;size=normal&amp;cb=s56zpf76hqc8"
+                      ></iframe>
+                    </div>
+                    <textarea
+                      id="g-recaptcha-response"
+                      name="g-recaptcha-response"
+                      class="g-recaptcha-response"
+                      style="
+                        width: 250px;
+                        height: 40px;
+                        border: 1px solid rgb(193, 193, 193);
+                        margin: 10px 25px;
+                        padding: 0px;
+                        resize: none;
+                        display: none;
+                      "
+                    ></textarea>
+                  </div>
+                  <iframe style="display: none"></iframe>
+                </div>
+
+                <div class="privacy-text">
+                  Нажимая кнопку «Отправить» вы&nbsp;даете согласие
+                  на&nbsp;обработку персональных данных в&nbsp;соответствии
+                  с&nbsp;<a
+                    class="link-pivacy-policy"
+                    target="_blank"
+                    href="privacy-policy.html"
+                    >политикой конфиденциальности</a
+                  >
+                </div>
+              </fieldset>
+              <input
+                id="button"
+                class="submit disabled"
+                value="Отправить"
+                name="submit"
+                type="submit"
+              />
+            </form>
+            <span style="font-size: 12px"
+              ><span class="red_sep">*</span> - Для заказа счета необходимо
+              заполнение всех полей</span
+            ><br />
+            <span style="font-size: 12px"
+              ><span class="red_sep">**</span> - Поддерживаемые форматы файлов:
+              .doc, .docx, .xls, .xlsx, .odt, .pdf</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- модалка скидка -->
+    <div id="modal-skidka" class="modal">
+      <div class="modal-skidka">
+        <span class="close-modal-skidka">×</span>
+
+        <div class="myformbox form-modal">
+          <div class="myform myform_1 delta-mailer-form">
+            <div class="form-modal-title frm_tit">Хочу скидку</div>
+            <div class="frm_result frm_result_ok" style="display: none">
+              Заявка успешно отправлена!
+            </div>
+
+            <form
+              action="katalog/mufta-drk-perehodnaya-polietilen-pe-pnd-stalchugunasbest/mufta-drk-perehodnaya-polietilen-stalchugunasbest-DN-90-88-103.html"
+              method="post"
+            >
+              <div class="input setdefaultvalue defaultvalue">
+                <input
+                  id="frm_name1"
+                  type="text"
+                  name="name"
+                  placeholder="Как к Вам обращаться?"
+                />
+                <!-- <label for="frm_name1">Как к Вам обращаться?</label> -->
+              </div>
+              <div class="input setdefaultvalue defaultvalue">
+                <input
+                  id="frm_phone1"
+                  type="text"
+                  name="phone"
+                  class="phonemask"
+                  placeholder="Номер телефона"
+                />
+                <!-- <label for="frm_phone1">Номер телефона</label> -->
+              </div>
+              <div class="input setdefaultvalue defaultvalue">
+                <input
+                  id="frm_cena1"
+                  type="text"
+                  name="cena_p"
+                  value="10240"
+                  placeholder="Цена продавца"
+                />
+                <!-- <label for="frm_cena1">Цена продавца</label> -->
+              </div>
+              <div class="input setdefaultvalue defaultvalue">
+                <input
+                  id="frm_cena2"
+                  type="text"
+                  name="cena_m"
+                  value="Хочу за цену ... ₽"
+                  placeholder="Хочу за цену ... ₽"
+                />
+                <!-- <label for="frm_cena2">Моя цена</label> -->
+              </div>
+              <div class="input setdefaultvalue defaultvalue">
+                <input
+                  id="frm_link1"
+                  type="text"
+                  name="link"
+                  placeholder="Ссылка на аналогичный товар в другом магазине"
+                />
+                <!-- <label for="frm_link1"
+                  >Ссылка на&nbsp;аналогичный товар в&nbsp;другом
+                  магазине</label
+                > -->
+              </div>
+
+              <!-- <div class="uk-width-1-3@m">
+                <div class="frm_input frm_file frm_input_multi">
+                  <p>или отправьте счёт другого продавца</p>
+                  <input id="frm1__file" type="file" name="ufile[]" />
+                  <label for="frm1__file"><span>Прикрепить файл</span></label>
+                  <div class="frm_addon">
+                    <img src="img/icon_form-attach.svg" alt="" />
+                  </div>
+                  <div class="frm_clear">
+                    <img src="img/close.svg" alt="" />
+                  </div>
+                </div>
+              </div> -->
+
+              <div class="input setdefaultvalue defaultvalue">
+                <textarea
+                  id="frm_msg1"
+                  name="msg"
+                  placeholder="Сообщение продавцу"
+                ></textarea>
+                <!-- <label for="frm_msg1">Сообщение продавцу</label> -->
+              </div>
+              <div>
+                <input type="hidden" name="pageid" value="11619" />
+                <input type="hidden" name="formid" value="1" />
+                <input type="hidden" name="cntrl" value="0" />
+                <div class="frm_submit">
+                  <button class="button" type="submit">Отправить</button>
+                </div>
+                <div class="frm_row frm_result frm_result_er"></div>
+                <div class="polit">
+                  Нажимая кнопку «Отправить», вы&nbsp;даёте согласие
+                  на&nbsp;обработку персональных данных в&nbsp;соответствии
+                  с&nbsp;<a
+                    class="link-pivacy-policy"
+                    href="privacy-policy.html"
+                    target="_blank"
+                    >политикой конфиденциальности</a
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- модалка отзыв -->
+    <div id="formCommentBox" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span>Отзывы</span>
+          <span class="close">X</span>
+        </div>
+        <div class="modal-body">
+          <div class="form-style-8 comment">
+            <form
+              id="form_comment"
+              method="POST"
+              action="javascript:void(null);"
+              onsubmit="send()"
+            >
+              <span class="for-who"><b></b></span>
+              <div class="stars make">
+                <div class="star" data-num="1"></div>
+                <div class="star" data-num="2"></div>
+                <div class="star" data-num="3"></div>
+                <div class="star" data-num="4"></div>
+                <div class="star" data-num="5"></div>
+                <input class="numstar" type="hidden" name="numstar" value="" />
+              </div>
+              <div class="inpBl setdefaultvalue uservalue">
+                <label for="name_comment">Ваше имя</label>
+                <input
+                  id="name_comment"
+                  type="text"
+                  name="name"
+                  onkeyup="this.setAttribute('value', this.value);"
+                  value=""
+                  required=""
+                />
+              </div>
+              <div class="inpBl setdefaultvalue uservalue">
+                <label for="name_comment_org">Название организации</label>
+                <input
+                  id="name_comment_org"
+                  type="text"
+                  name="name_org"
+                  onkeyup="this.setAttribute('value', this.value);"
+                  value=""
+                  required=""
+                />
+              </div>
+              <div class="inpBl setdefaultvalue uservalue">
+                <label for="name_comment">email</label>
+                <input
+                  id="name_comment"
+                  type="email"
+                  name="email"
+                  onkeyup="this.setAttribute('value', this.value);"
+                  value=""
+                  required=""
+                />
+              </div>
+              <div class="inpBl setdefaultvalue uservalue">
+                <label for="message_comment">Комментарий</label>
+                <textarea
+                  id="message_comment"
+                  name="message"
+                  onkeyup="this.setAttribute('value', this.value);"
+                  required=""
+                ></textarea>
+              </div>
+              <input class="pageid" type="hidden" name="pageid" value="11619" />
+              <input class="for-name" type="hidden" name="for-name" value="" />
+              <button class="submitBtn clButt">Оставить отзыв</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- скролл в верх -->
+    <a href="#" class="scrollup" style="display: block"></a>
   </body>
 </html>

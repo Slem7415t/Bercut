@@ -4,15 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="style.css" />
 
+    <script src="assets/js/jquery.min.js" defer></script>
+	  <script async src="assets/js/clipboard.min.js" defer></script> 
+	  <script async src="assets/js/qrcode.min.js" defer></script>
+
+    <script async src="https://use.fontawesome.com/d92205138a.js" defer></script>	
+	  <script async src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"defer></script>
+
+    <script src="assets/js/jquery-3.6.3.min.js" defer></script>
     <script src="script.js" defer></script>
+
+    
+
   </head>
   <body>
-    <section class="box"><a href="page-card.html">ссылка на 2ю страницу</a></section>
+    <section style="position: fixed; top: 0; z-index: 20; "><a href="page-card.html">ссылка на 2ю страницу</a></section>
     <!-- шапка -->
-    <header class="box">
+    <header>
       <div class="header-top container">
         <div class="header-top__left">
           <a href="/">
@@ -27,58 +39,277 @@
               <svg class="svg-map">
                 <use xlink:href="assets/sprite.svg#svgMap"></use>
               </svg>
-              <span>Ростов-на-Дону</span>
+              <span class="focus_city_map_menu">Ростов-на-Дону</span>
             </p>
           </div>
           <div>
             <p>
-              <svg class="svg-tel">
-                <use xlink:href="assets/sprite.svg#svgTel"></use>
-              </svg>
-              <span>8 800 700-62-07</span>
+              <a href="tel:88007006207">
+                <svg class="svg-tel">
+                 <use xlink:href="assets/sprite.svg#svgTel"></use>
+                </svg>
+                <span>8 800 700-62-07</span>
+              </a>  
             </p>
             <p>
-              <svg class="svg-mail">
-                <use xlink:href="assets/sprite.svg#svgMail"></use>
-              </svg>
-              <span>info@berkut-rnd.ru</span>
+              <a href="mail:info@berkut-rnd.ru">
+                <svg class="svg-mail">
+                 <use xlink:href="assets/sprite.svg#svgMail"></use>
+                </svg>
+                <span>info@berkut-rnd.ru</span>
+              </a>
             </p>
             <p>
-              <svg class="svg-telegram">
-                <use xlink:href="assets/sprite.svg#svgTelegram"></use>
-              </svg>
-              <span>@berkutpipe_rnd</span>
+              <a href="https://t.me/@berkutpipe_rnd">
+                <svg class="svg-telegram">
+                 <use xlink:href="assets/sprite.svg#svgTelegram"></use>
+                </svg>
+                <span>@berkutpipe_rnd</span>
+              </a>
             </p>
           </div>
         </div>
       </div>
 
-      <div class="header-bottom container">
-        <ul>
-          <li><a href="#">Каталог</a></li>
-          <li><a href="#">О компании</a></li>
-          <li><a href="#">Цены</a></li>
-          <li><a href="#">Объекты</a></li>
-          <li><a href="#">Отзывы</a></li>
-          <li><a href="#">Информация</a></li>
-          <li><a href="#">Контрафакт!</a></li>
-          <li><a href="#">Статьи</a></li>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Контакты</a></li>
-        </ul>
+      <div class="header-bottom">
+        <div class="container">
+          <ul>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Цены</a></li>
+            <li><a href="#">Объекты</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Информация</a></li>
+            <li><a href="#">Контрафакт!</a></li>
+            <li><a href="#">Статьи</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>  
       </div>
+
+      <div class="popup_map_menu" style="display: none;">
+        <div class="all_content_popup_map_menu">
+          <div class="close_popup_map_menu">×</div>
+          <div class="content_popup_map_menu">
+            <div class="popup_map_menu_left">
+              <h3>Субъект</h3>
+              <div class="list_city_map">
+                <div class="one_city_map_menu active_city" data_id="11259">Ростовская область</div>
+                <div class="one_city_map_menu" data_id="11271">Астраханская область</div>
+                <div class="one_city_map_menu" data_id="11272">Волгоградская область</div>
+                <div class="one_city_map_menu" data_id="11261">Республика Калмыкия</div>
+                <div class="one_city_map_menu" data_id="11273">Воронежская область</div>
+                <div class="one_city_map_menu" data_id="11267">Кабардино-Балкарская Республика</div>
+                <div class="one_city_map_menu" data_id="11268">Карачаево-Черкесская Республика</div>
+                <div class="one_city_map_menu" data_id="11270">Краснодарский край</div>
+                <div class="one_city_map_menu" data_id="11262">Республика Адыгея</div>
+                <div class="one_city_map_menu" data_id="11263">Республика Дагестан</div>
+                <div class="one_city_map_menu" data_id="11264">Республика Ингушетия</div>
+                <div class="one_city_map_menu" data_id="11260">Республика Крым</div>
+                <div class="one_city_map_menu" data_id="11265">Республика Северная Осетия (Алания)</div>
+                <div class="one_city_map_menu" data_id="11269">Ставропольский край</div>
+                <div class="one_city_map_menu" data_id="11266">Чеченская Республика</div>
+              </div>
+            </div>
+            <div class="popup_map_menu_right">
+              <h3>Город</h3>
+              <div class="list_object_in_city">
+                <div class="addres_in_popup">
+                  <a href="//berkut-rnd.ru/?go">Ростов-на-Дону</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//bataisk.berkut-rnd.ru/?go">Батайск</a>
+                </div><div class="addres_in_popup">
+                  <a href="//belaya-kalitva.berkut-rnd.ru/?go">Белая Калитва</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//volgodonsk.berkut-rnd.ru/?go">Волгодонск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//doneck.berkut-rnd.ru/?go">Донецк</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//kamensk-shahtinskij.berkut-rnd.ru/?go">Каменск-Шахтинский</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//millerovo.berkut-rnd.ru/?go">Миллерово</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//novocherkassk.berkut-rnd.ru/?go">Новочеркасск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//taganrog.berkut-rnd.ru/?go">Таганрог</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//shahty.berkut-rnd.ru/?go">Шахты</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//azov.berkut-rnd.ru/?go">Азов</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//salsk.berkut-rnd.ru/?go">Сальск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//semikarakorsk.berkut-rnd.ru/?go">Семикаракорск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//proletarsk.berkut-rnd.ru/?go">Пролетарск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//novoshahtinsk.berkut-rnd.ru/?go">Новошахтинск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//morozovsk.berkut-rnd.ru/?go">Морозовск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//cimlyansk.berkut-rnd.ru/?go">Цимлянск</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//zernograd.berkut-rnd.ru/?go">Зерноград</a>
+                </div>
+                <div class="addres_in_popup">
+                  <a href="//zimovniki.berkut-rnd.ru/?go">Зимовники</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </header>
 
-    <!-- 
-    тело
- -->
-
-    <main class="box">
-      <section class="carousel-banner">
-        <div>
+    <!-- тело -->
+    <main>
+      <section class="carousel-banner"> 
           <div class="carousel-box container">
-            <div class="carousel-cards">
-              <div class="card-box__card-banner">
+            <div class="carousel-box__value">
+              <div class="carousel-cards">
+                <div class="card-box__card-banner">
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="1">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="2">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="3">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="4">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="5">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="6">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="7">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="8">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="9">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="10">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="11">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="12">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="13">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="14">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="15">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                </div>
+                <div class="card-box__card-banner">
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="1">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="2">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="3">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="4">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="5">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="6">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="7">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="8">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="9">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="10">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="11">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="12">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="13">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="14">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                <a href="">
+                  <img src="assets/images/catalog/ZERN-2000_2018 1.jpg" alt="15">
+                  <p>Опорно направляющие кольца Спейсеры</p>
+                </a>
+                </div>
+                <div class="card-box__card-banner">
                 <a href="">
                   <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="1">
                   <p>Опорно направляющие кольца Спейсеры</p>
@@ -139,7 +370,8 @@
                   <img src="assets/images/catalog/gibkaya-vstavka-danfoss-zkv-082x9036-ru16-du125-902209788-1000x1000 1.jpg" alt="15">
                   <p>Опорно направляющие кольца Спейсеры</p>
                 </a>
-              </div>
+                </div>
+            </div>
             </div>
             <div class="box-svg-circle left">
               <svg
@@ -170,7 +402,36 @@
               </svg>
             </div>
           </div>
-        </div>
+
+          <!-- <div class="box-svg-circle left">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="24"
+              viewBox="0 0 12 24"
+              fill="none"
+            >
+              <path
+                d="M2.05085 12L11.7509 22.4664C11.8307 22.5507 11.8939 22.6508 11.9366 22.761C11.9794 22.8711 12.0009 22.9891 12 23.108C11.999 23.2269 11.9756 23.3445 11.9311 23.4538C11.8866 23.5632 11.8219 23.6622 11.7407 23.7452C11.6596 23.8281 11.5635 23.8933 11.4582 23.937C11.3528 23.9808 11.2403 24.0021 11.127 23.9998C11.0137 23.9976 10.902 23.9717 10.7984 23.9239C10.6947 23.876 10.6011 23.807 10.5229 23.7208L0.24266 12.6272C0.087059 12.4593 9.53674e-07 12.2343 9.53674e-07 12C9.53674e-07 11.7657 0.087059 11.5407 0.24266 11.3728L10.5229 0.279158C10.6011 0.193031 10.6947 0.124029 10.7984 0.0761395C10.902 0.0282497 11.0137 0.00242615 11.127 0.000162125C11.2403 -0.0021019 11.3528 0.0192375 11.4582 0.0629501C11.5635 0.106661 11.6596 0.171871 11.7407 0.254814C11.8219 0.337755 11.8866 0.436777 11.9311 0.546152C11.9756 0.655525 11.999 0.773079 12 0.892008C12.0009 1.01094 11.9794 1.12888 11.9366 1.23902C11.8939 1.34915 11.8307 1.44929 11.7509 1.53364L2.05085 12Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <div class="box-svg-circle right">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="24"
+              viewBox="0 0 12 24"
+              fill="none"
+            >
+              <path
+                d="M9.94915 12L0.249138 22.4664C0.169276 22.5507 0.106139 22.6508 0.06338 22.761C0.0206207 22.8711 -0.000911446 22.9891 2.95633e-05 23.108C0.000970572 23.2269 0.0243654 23.3445 0.0688615 23.4538C0.113358 23.5632 0.178072 23.6622 0.259257 23.7452C0.340443 23.8281 0.436488 23.8933 0.541836 23.937C0.647183 23.9808 0.759742 24.0021 0.872997 23.9998C0.986253 23.9976 1.09795 23.9717 1.20164 23.9239C1.30533 23.876 1.39894 23.807 1.47706 23.7208L11.7573 12.6272C11.9129 12.4593 12 12.2343 12 12C12 11.7657 11.9129 11.5407 11.7573 11.3728L1.47706 0.279158C1.39894 0.193031 1.30533 0.124029 1.20164 0.0761395C1.09795 0.0282497 0.986253 0.00242615 0.872997 0.000162125C0.759742 -0.0021019 0.647183 0.0192375 0.541836 0.0629501C0.436488 0.106661 0.340443 0.171871 0.259257 0.254814C0.178072 0.337755 0.113358 0.436777 0.0688615 0.546152C0.0243654 0.655525 0.000970572 0.773079 2.95633e-05 0.892008C-0.000911446 1.01094 0.0206207 1.12888 0.06338 1.23902C0.106139 1.34915 0.169276 1.44929 0.249138 1.53364L9.94915 12Z"
+                fill="white"
+              />
+            </svg>
+          </div> -->
+        
       </section>
       <section class="bread-crumbs container">
         <span class="bread-crumb"><a href="">Главная</a></span>
@@ -180,39 +441,6 @@
         >
       </section>
       <section class="search container">
-        <div class="search__basket-box">
-          <!-- <svg class="svg-basket">
-            <use xlink:href="assets/sprite.svg#svgBasket"></use>
-          </svg> -->
-          <svg
-            class="svg-basket"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 30 30"
-            fill="none"
-          >
-            <path
-              d="M2.43243 3.05405H4.61993L5.55743 6.80405M5.55743 6.80405L8.68243 19.304H24.9324L28.0574 6.80405H5.55743Z"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M8.68298 25.554C9.71852 25.554 10.558 24.7146 10.558 23.679C10.558 22.6435 9.71852 21.804 8.68298 21.804C7.64745 21.804 6.80798 22.6435 6.80798 23.679C6.80798 24.7146 7.64745 25.554 8.68298 25.554Z"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M24.9324 25.554C25.968 25.554 26.8074 24.7146 26.8074 23.679C26.8074 22.6435 25.968 21.804 24.9324 21.804C23.8969 21.804 23.0574 22.6435 23.0574 23.679C23.0574 24.7146 23.8969 25.554 24.9324 25.554Z"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <span class="search__basket-box__sum"
-            ><span>1 456</span><span>&nbsp;₽</span></span
-          >
-        </div>
         <div class="search__search-box">
           <input type="text" placeholder="Поиск по&nbsp;сайту" />
           <button>Найти</button>
@@ -220,6 +448,37 @@
       </section>
       <section class="main-content container">
         <div class="main-content__aside">
+          <a href="" class="search__basket-box">
+            <svg
+              class="svg-basket red"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 30 30"
+              fill="none"
+            >
+              <path
+                d="M2.43243 3.05405H4.61993L5.55743 6.80405M5.55743 6.80405L8.68243 19.304H24.9324L28.0574 6.80405H5.55743Z"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8.68298 25.554C9.71852 25.554 10.558 24.7146 10.558 23.679C10.558 22.6435 9.71852 21.804 8.68298 21.804C7.64745 21.804 6.80798 22.6435 6.80798 23.679C6.80798 24.7146 7.64745 25.554 8.68298 25.554Z"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M24.9324 25.554C25.968 25.554 26.8074 24.7146 26.8074 23.679C26.8074 22.6435 25.968 21.804 24.9324 21.804C23.8969 21.804 23.0574 22.6435 23.0574 23.679C23.0574 24.7146 23.8969 25.554 24.9324 25.554Z"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="search__basket-box__sum"
+              ><span>1 456</span>
+              <span>&nbsp;₽</span></span
+            >
+          </a>
           <h2>Категории</h2>
           <ul>
             <li><a href="#">Сварочное оборудование</a></li>
@@ -639,11 +898,8 @@
       </section>
     </main>
 
-    <!-- 
-    подвал
- -->
-
-    <footer class="box">
+    <!-- подвал -->
+    <footer>
       <div class="bottom-box container">
         <div class="bottom-left">
           <p class="signature">&copy;&nbsp;2014–2023&nbsp;ООО&nbsp;«БЕРКУТ»</p>
@@ -657,10 +913,14 @@
         </div>
         <div class="bottom-right">
         <p class="footer-contact">
-          <img src="assets/images/lucide_phone-call.png" alt="phone">
-          <span>8 800 700-62-07</span>
-          <img src="assets/images/lucide_mail.png" alt="mail">
-          <span>info@berkut-rnd.ru</span>
+          <a href="tel:88007006207">
+            <img src="assets/images/lucide_phone-call.png" alt="phone">
+            <span>8 800 700-62-07</span>
+          </a>
+          <a href="mail:info@berkut-rnd.ru">
+            <img src="assets/images/lucide_mail.png" alt="mail">
+            <span>info@berkut-rnd.ru</span>
+          </a>
           <span class="link-footer">
             <a href=""><img src="assets/images/ph_telegram-logo.png" alt="telegram"></a>
             <a href=""><img src="assets/images/ion_logo-vk.png" alt="vk"></a>
@@ -676,5 +936,6 @@
         </div>
       </div>
     </footer>
+    <a href="#" class="scrollup" style="display: block;"></a>
   </body>
 </html>

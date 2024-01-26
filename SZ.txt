@@ -1,0 +1,58 @@
++       1. https://skr.sh/sNu2PnGMzLk не должно быть белых полей, нужно сделать на всю ширину экрана фон
+
++       2. https://skr.sh/sNuE9RdlSjN нужно сделать тень, как в макете https://skr.sh/sNu7ZgmrNto
+
++       3. https://skr.sh/sNuhEUJutFF цвета у иконок не те, в макете они красные
+
++       4. https://skr.sh/sNuXgCsoB6Q добавить ссылки на телефон, почту и тг
+
++       5. https://skr.sh/sNuvKGvUZbY не реализовано окно с городами, как на нынешнем сайте https://berkut-rnd.ru/ https://skr.sh/sNuCbiItZ5V https://skr.sh/sNuQJV6h31c
+
++       6. https://skr.sh/sNu76n9PxvQ полоска в макете идет на всю ширину https://skr.sh/sNucOpeSgdF
+
++       7. https://skr.sh/sNu5AYzX078 сделать наведение красным цветом
+
++       8. https://skr.sh/sNubN1yNrbD карусель не работает
+
++       9. https://skr.sh/sNuo7w6MeUF в макете не такой стиль, +не реализовано наведение https://skr.sh/sNueYjO6DJ6
+
++       10. https://skr.sh/sNuV4CkXL1e в комм. указано, что согласовали левый макет, отображение не совпадает https://skr.sh/sNuUsXvMrtf также должна быть ссылка на корзину
+
++       11. https://skr.sh/sNuWQBVJ40R убрать черную рамку при фокусе, сделать, например, такой цвет #cdcdcd
+
++       12. https://skr.sh/sNuyBWWL1AA наведение на пункты меню сделать таким же красным
+
+13. https://skr.sh/sNuVn4zVXWF по идее, должно работать так: нажатие на кнопку, открывается выбор количества и количество можно менять +-
+
+14. https://skr.sh/sNu9pWmQGgX нет ссылки на товар
+
++       15. https://skr.sh/sNuhR888Y4S сделать наведение, как стиль активного пункта
+
++       16. https://skr.sh/sNuET8B5fRE добавить ссылки на телефон и почту
+
++       17. https://skr.sh/sNuVOvVqukg сделать cursor pointer
+
++       18. https://skr.sh/sNuTFmSG5Ss закрепить меню при скролле страницы
+
++       19. https://skr.sh/sNuvCzqBQa0 сделать тег h1 и настроить стили, чтобы выглядело одинаково независимо от тега, который там будет
+
++       20. https://skr.sh/sNuICW8veGf сделать как в макете https://skr.sh/sNu3xDt5K3M без рамки и с тенью
+
++       21. сделать кнопку скролла "вверх" https://skr.sh/sNuXBkroxPf
+
++       22. https://skr.sh/sNuVvNcVxoP добавить ссылку на https://www.life-line.ru/ (target blank, nofollow)
+
+=       23. сделать модальные окна (просто вёрстка) https://skr.sh/sNuoBZl2UYd по содержанию ориентироваться на  https://berkut-rnd.ru/katalog/mufta-drk-perehodnaya-polietilen-pe-pnd-stalchugunasbest/mufta-drk-perehodnaya-polietilen-stalchugunasbest-DN-90-88-103.html
+
++       24. https://skr.sh/sNumHMHRf2y https://skr.sh/sNudN1WS5p1 ссылки чуть по-другому оформить, убрать обычное подчеркивание и сделать бордер снизу, чтобы не так прилипал. сделать наведение красным цветом
+
+25. https://skr.sh/sNuDPdFv8pG галерея не реализована, при клике на миниатюры должно меняться главное фото, +при клике на главное фото должно открываться увеличение в окне
+
++       26. https://skr.sh/sNuMESc93fB межстрочный интервал некорректный, сравнить с макетом https://skr.sh/sNuWkmEpx2r
+
+27. https://skr.sh/sNuKyv21GOv не реализован функционал карусели
+
++       28. https://skr.sh/sNu9DKGfMlr добавить либо модальное окно, либо как на нынешнем сайте https://skr.sh/sNuX306NQxB https://berkut-rnd.ru/katalog/mufta-drk-perehodnaya-polietilen-pe-pnd-stalchugunasbest/mufta-drk-perehodnaya-polietilen-stalchugunasbest-DN-90-88-103.html 
+
+===
+макета для адаптива нет, делать на свое усмотрение, можно ориентироваться на http://abilon.alfaltd.ru/
