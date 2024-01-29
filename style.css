@@ -58,7 +58,6 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    
     /* width: 100%;  */
     /* width: 100vw; */
 }
@@ -160,7 +159,7 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
-    max-width: 1920px;
+    /* max-width: 1920px; */
     margin: 0 auto;
     background: #FFF;
     z-index: 2;
@@ -532,14 +531,6 @@ main {
     padding: 0 20px;
 }
 
-.card-basket {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 20px;
-}
-
 .card-basket__from {
     color: #3C3C3C;
     text-align: center;
@@ -582,7 +573,7 @@ main {
 }
 
 .calc {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 30px;
 }
@@ -1198,14 +1189,32 @@ p.offers-top:nth-child(2) {
 
 .carousel-cards, .carousel-cards__up {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
-    /* margin-bottom: 30px; */
-    overflow: hidden;
 }
 
-.carousel-cards__up {
+.carousel-cards__up-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 20px;
+}
+
+.card-box__card-up {
+    cursor: pointer;
+    width: calc((100% - 80px) / 5);
+    padding: 12px 2px 22px 2px;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+    flex-shrink: 0;
+    background: #FFF;
+    
+    /* Тень */
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.15);
+    display: flex;
 }
 
 .card-box__card-banner {
@@ -1228,6 +1237,41 @@ p.offers-top:nth-child(2) {
     
     /* Тень */
     box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.15);
+}
+
+.card-content {
+    height: 105px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    display: flex;
+    padding: 0 20px;
+}
+
+.card-content>p {
+    color: #818181;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-size: 14px;
+}
+
+.card-basket {
+    width: 224px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    z-index: 30;
+}
+
+.card-basket__sum .card-basket__forex {
+    text-align: center;
+    color: #3C3C3C;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 18px;
 }
 
 .card-box__card-banner>a:nth-child(5n) {
@@ -1253,41 +1297,22 @@ p.offers-top:nth-child(2) {
     font-size: 14px;
 }
 
-.carousel-cards .card-box__card, .carousel-cards__up .card-box__card-up {
-    flex-basis: 15%;
-    flex-shrink: 0;
-    flex-grow: 1;
-
-
-    display: flex;
-width: 264px;
-height: 386px;
-padding: 10px 0px 20px 0px;
-flex-direction: column;
-align-items: center;
-gap: 11px;
-flex-shrink: 0;
-
-
-background: #FFF;
-
-/* Тень */
-box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.15);
-}
-
-.carousel-cards .card-box__card>img, .carousel-cards__up .card-box__card-up>img {
-    max-width: 100%;
+.carousel-cards__up .card-box__card-up>img {
+    width: 100%;
+    padding: 0 10px;
 }
 
 .carousel-box, .carousel-box__up {
     position: relative;
-    /* width: calc(100% + 200px);
-    margin: 0 auto; */
-    /* overflow: hidden; */
 }
 
 .carousel-box__value {
     overflow: hidden;
+}
+
+.card-box__card-up:hover {
+    padding: 10px 0 20px;
+    border: 2px solid rgba(255, 76, 76, 0.50);
 }
 
 /* отзывы */
@@ -1818,3 +1843,88 @@ box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.15);
     justify-content: center;
     align-items: center;
 }
+
+
+/* ------------------------------------------------------- */
+.container-slider {
+    max-width: 1580px;
+    margin: 0 auto;
+ }
+
+.slider-line {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-box__card-up>img {
+    width: 100%;
+}
+
+
+
+.slider-box {
+    text-align: center;
+  }
+
+  .btn-left,
+  .btn-right,
+  .sl-obertca,
+  .dotUp,
+  .dotDown {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .slider-line {
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: 1s;
+  }
+
+  .slider-line > img {
+    min-width: 400px;
+    width: 100%;
+  } /* это просто придал размер фото чтоб растянуть под обертку */
+
+  .sl-obertca {
+    overflow: hidden;
+  }
+
+  .dotUp, .dotDown {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #0c7ef0;
+  }
+
+  .btn-left,
+  .btn-right {
+    padding: 10px 20px;
+    color: white;
+    min-width: 80px;
+    background-color: #1e7ede;
+    border-radius: 5px;
+    border: 0.5px solid black;
+    box-shadow: 0 0 5px 1px black;
+  }
+
+  .btn-left:hover,
+  .btn-right:hover,
+  .dotUp:hover,
+  .dotDown:hover {
+    opacity: 0.8;
+  }
+
+  .btn-left:active,
+  .btn-right:active,
+  .dotUp:hover,
+  .dotDown:active {
+    opacity: 1;
+  }
+
+  .active {
+    opacity: 0.8;
+  }
