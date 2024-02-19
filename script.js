@@ -1,182 +1,182 @@
-import {arrSliderCard} from '/assets/js/slider-card.js'; // массив с карточками
+// import {arrSliderCard} from '/assets/js/slider-card.js'; // массив с карточками
 
-function sliderFunction(lineSliders, leftBtn, rightBtn, dot) {
-
-
-const sliderLine = document.querySelector(lineSliders),
-    btnLeft = document.querySelector(leftBtn),
-    btnRight = document.querySelector(rightBtn),
-    dots = document.querySelectorAll(dot);
-
-let position = 0,
-    dotIndex = 0;
-
-const nextSlide = () => {
-    if(position < (dots.length-1) * 400) {
-        position += 400;
-        dotIndex++
-    } else {
-        position = 0;
-        dotIndex = 0;
-    }
-    sliderLine.style.left = -position + "px";
-    thisSlide(dotIndex);
-};
-
-const prevSlide = () => {
-    if(position > 0) {
-        position -= 400;
-        dotIndex--
-    } else {
-        position = (dots.length-1) * 400;
-        dotIndex = (dots.length-1)
-    }
-    sliderLine.style.left = -position + "px";
-    thisSlide(dotIndex);
-};
-
-const thisSlide = (index) => {
-    for (let dot of dots) {
-        dot.classList.remove('active');
-    }
-    dots[index].classList.add('active');
-}
-
-btnRight.addEventListener("click", nextSlide);
-btnLeft.addEventListener("click", prevSlide);
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        position = 400 * index;
-        sliderLine.style.left = -position + 'px'
-        dotIndex = index;
-        thisSlide(dotIndex);
-    });
-});
+// function sliderFunction(lineSliders, leftBtn, rightBtn, dot) {
 
 
-};
-!document.querySelector('#sliderLineDown') || sliderFunction("#sliderLineDown", "#btnLeftDown", "#btnRightDown", ".dotDown");
-!document.querySelector('#sliderLineUp') || sliderFunction("#sliderLineUp", "#btnLeftUp", "#btnRightUp", ".dotUp");
+// const sliderLine = document.querySelector(lineSliders),
+//     btnLeft = document.querySelector(leftBtn),
+//     btnRight = document.querySelector(rightBtn),
+//     dots = document.querySelectorAll(dot);
+
+// let position = 0,
+//     dotIndex = 0;
+
+// const nextSlide = () => {
+//     if(position < (dots.length-1) * 400) {
+//         position += 400;
+//         dotIndex++
+//     } else {
+//         position = 0;
+//         dotIndex = 0;
+//     }
+//     sliderLine.style.left = -position + "px";
+//     thisSlide(dotIndex);
+// };
+
+// const prevSlide = () => {
+//     if(position > 0) {
+//         position -= 400;
+//         dotIndex--
+//     } else {
+//         position = (dots.length-1) * 400;
+//         dotIndex = (dots.length-1)
+//     }
+//     sliderLine.style.left = -position + "px";
+//     thisSlide(dotIndex);
+// };
+
+// const thisSlide = (index) => {
+//     for (let dot of dots) {
+//         dot.classList.remove('active');
+//     }
+//     dots[index].classList.add('active');
+// }
+
+// btnRight.addEventListener("click", nextSlide);
+// btnLeft.addEventListener("click", prevSlide);
+
+// dots.forEach((dot, index) => {
+//     dot.addEventListener('click', () => {
+//         position = 400 * index;
+//         sliderLine.style.left = -position + 'px'
+//         dotIndex = index;
+//         thisSlide(dotIndex);
+//     });
+// });
+
+
+// };
+// !document.querySelector('#sliderLineDown') || sliderFunction("#sliderLineDown", "#btnLeftDown", "#btnRightDown", ".dotDown");
+// !document.querySelector('#sliderLineUp') || sliderFunction("#sliderLineUp", "#btnLeftUp", "#btnRightUp", ".dotUp");
 
 
 /**
  * карусель из карточек
  */
-function sliderAll(){
-const arrSliderCardJson = arrSliderCard().slice();
+// function sliderAll(){
+// const arrSliderCardJson = arrSliderCard().slice();
 
 
-const cardsSumCard = document.querySelector('#sliderLineUp');
+// const cardsSumCard = document.querySelector('#sliderLineUp');
     
-arrSliderCardJson.forEach((el) => {
-    let count = 1;
+// arrSliderCardJson.forEach((el) => {
+//     let count = 1;
     
-    if (el.id  == 1 || el.id % 5 == 0) {
+//     if (el.id  == 1 || el.id % 5 == 0) {
     
      
-    const sliderGroup = document.createElement('div');
-    sliderGroup.classList.add('carousel-cards__up-item');
+//     const sliderGroup = document.createElement('div');
+//     sliderGroup.classList.add('carousel-cards__up-item');
 
    
 
-    const cardSlide = document.createElement('div');
-    cardSlide.classList.add('card-box__card-up');
-    cardSlide.innerHTML = `
-        <img src="${el.images}" alt="${el.title}" />
-        <div class="card-content">
-            <p>${el.description}</p>
-            <div class="card-basket">
-                <div class="basket-sum sumUp" data-sum-id="${el.id}">
-                    <span class="card-basket__from">от</span>
-                    <span class="card-basket__sum">14&nbsp;700</span>
-                    <span class="card-basket__forex">&nbsp;₽</span>
-                </div>
-                <div class="calc calcUp" data-calc-id="${el.id}">
-                    <a class="minus">&minus;</a>
-                    <span class="calc-elem">1</span>
-                    <a class="plus">&plus;</a>
-                </div>
-                <a class="link-basket basketUp" data-basket-id="${el.id}">
-                    <img src="assets/images/icon-basket.png"
-                        alt="icon-basket"
-                    />
-                </a>
-            </div>
-        </div> 
-    `;
+//     const cardSlide = document.createElement('div');
+//     cardSlide.classList.add('card-box__card-up');
+//     cardSlide.innerHTML = `
+//         <img src="${el.images}" alt="${el.title}" />
+//         <div class="card-content">
+//             <p>${el.description}</p>
+//             <div class="card-basket">
+//                 <div class="basket-sum sumUp" data-sum-id="${el.id}">
+//                     <span class="card-basket__from">от</span>
+//                     <span class="card-basket__sum">14&nbsp;700</span>
+//                     <span class="card-basket__forex">&nbsp;₽</span>
+//                 </div>
+//                 <div class="calc calcUp" data-calc-id="${el.id}">
+//                     <a class="minus">&minus;</a>
+//                     <span class="calc-elem">1</span>
+//                     <a class="plus">&plus;</a>
+//                 </div>
+//                 <a class="link-basket basketUp" data-basket-id="${el.id}">
+//                     <img src="assets/images/icon-basket.png"
+//                         alt="icon-basket"
+//                     />
+//                 </a>
+//             </div>
+//         </div> 
+//     `;
 
-    count++;
-    console.log('up' + count + ' ' + el.id);
+//     count++;
+//     console.log('up' + count + ' ' + el.id);
 
 
-    sliderGroup.append(cardSlide);
+//     sliderGroup.append(cardSlide);
 
     
 
-    cardsSumCard.append(sliderGroup);
-} else {
+//     cardsSumCard.append(sliderGroup);
+// } else {
     
-    const cardSlide = document.createElement('div');
-    cardSlide.classList.add('card-box__card-up');
-    cardSlide.innerHTML = `
-        <img src="${el.images}" alt="${el.title}" />
-        <div class="card-content">
-            <p>${el.description}</p>
-            <div class="card-basket">
-                <div class="basket-sum sumUp" data-sum-id="${el.id}">
-                    <span class="card-basket__from">от</span>
-                    <span class="card-basket__sum">14&nbsp;700</span>
-                    <span class="card-basket__forex">&nbsp;₽</span>
-                </div>
-                <div class="calc calcUp" data-calc-id="${el.id}">
-                    <a class="minus">&minus;</a>
-                    <span class="calc-elem">1</span>
-                    <a class="plus">&plus;</a>
-                </div>
-                <a class="link-basket basketUp" data-basket-id="${el.id}">
-                    <img src="assets/images/icon-basket.png"
-                        alt="icon-basket"
-                    />
-                </a>
-            </div>
-        </div> 
-    `;
+//     const cardSlide = document.createElement('div');
+//     cardSlide.classList.add('card-box__card-up');
+//     cardSlide.innerHTML = `
+//         <img src="${el.images}" alt="${el.title}" />
+//         <div class="card-content">
+//             <p>${el.description}</p>
+//             <div class="card-basket">
+//                 <div class="basket-sum sumUp" data-sum-id="${el.id}">
+//                     <span class="card-basket__from">от</span>
+//                     <span class="card-basket__sum">14&nbsp;700</span>
+//                     <span class="card-basket__forex">&nbsp;₽</span>
+//                 </div>
+//                 <div class="calc calcUp" data-calc-id="${el.id}">
+//                     <a class="minus">&minus;</a>
+//                     <span class="calc-elem">1</span>
+//                     <a class="plus">&plus;</a>
+//                 </div>
+//                 <a class="link-basket basketUp" data-basket-id="${el.id}">
+//                     <img src="assets/images/icon-basket.png"
+//                         alt="icon-basket"
+//                     />
+//                 </a>
+//             </div>
+//         </div> 
+//     `;
 
-    let elems = document.querySelectorAll(".carousel-cards__up-item");
-    let len = elems.length;
-    let lastelement = len < 1 ? "" : elems[len-1];
+//     let elems = document.querySelectorAll(".carousel-cards__up-item");
+//     let len = elems.length;
+//     let lastelement = len < 1 ? "" : elems[len-1];
 
 
 
-    lastelement.append(cardSlide);
+//     lastelement.append(cardSlide); // тут нужно выбрать последний элемент
 
-    count++;
-    console.log('down' + count + ' ' + el.id)
+//     count++;
+//     console.log('down' + count + ' ' + el.id)
 
-}
+// }
 /**
  * Корзина
  */
-const openCalc = () => {
-    if (document.querySelector(`[data-calc-id="${el.id}"]`).style.display == 'none') {
-        document.querySelector(`[data-sum-id="${el.id}"]`).style.display = 'none';
-        document.querySelector(`[data-calc-id="${el.id}"]`).style.display = 'flex';
-    } else {
-        document.querySelector(`[data-sum-id="${el.id}"]`).style.display = 'flex';
-        document.querySelector(`[data-calc-id="${el.id}"]`).style.display = 'none';
-    }
-}    
+// const openCalc = () => {
+//     if (document.querySelector(`[data-calc-id="${el.id}"]`).style.display == 'none') {
+//         document.querySelector(`[data-sum-id="${el.id}"]`).style.display = 'none';
+//         document.querySelector(`[data-calc-id="${el.id}"]`).style.display = 'flex';
+//     } else {
+//         document.querySelector(`[data-sum-id="${el.id}"]`).style.display = 'flex';
+//         document.querySelector(`[data-calc-id="${el.id}"]`).style.display = 'none';
+//     }
+// }    
 
-document.querySelector(`[data-basket-id="${el.id}"]`).addEventListener('click', openCalc);
-
-
-
-});  // карточка карусели
+// document.querySelector(`[data-basket-id="${el.id}"]`).addEventListener('click', openCalc);
 
 
-} 
-!document.querySelector('#carouselUp') || sliderAll();
+
+// });  // карточка карусели
+
+
+// } 
+// !document.querySelector('#carouselUp') || sliderAll();
 
 /**
  * отзыв
